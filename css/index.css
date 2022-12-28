@@ -1,0 +1,132 @@
+:root {
+    --title-font-Lsize: 32px;
+    --title-font-Msize: 24px;
+    --title-font-Ssize: 24px;
+    --title-color: #111;
+    --title-sub-color:#3f3f3f;
+    --bacground-color: #ebb8b8;
+
+}
+
+/* 최상단 이동 다른 방법 */
+html {
+    scroll-behavior:smooth;
+  }
+  
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+.headerbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.header-menu {
+    display: flex;
+}
+
+.header-menu li {
+    padding: 16px 24px;
+    font-weight: bold;
+}
+
+.header-utility {
+    display: flex;
+}
+
+.header-utility a  {
+    color: #111;
+    padding: 12px 16px;
+}
+
+.headerbar-togleBtn {
+    position: absolute;
+    right: 32px;
+    display: none;
+}
+
+.contents-1 {
+    height: 800px;
+    /* background: black; */
+    display: flex;
+}
+
+.contents-bg {
+    width: 100%;
+    height: 700px; 
+    background: url(/img/bg-1\ \(1\).jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 0 0 0 30%;
+}
+
+.contents-bg .contents-inner {
+    height: 700px;
+    padding: 0 20px;
+    /* background: #ebb8b8; */
+    position: relative;
+}
+
+.contents-inner .contents-txt {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contents-inner h1 {
+    font-size: var(--title-font-Lsize);
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+.contents-inner h2 {
+    font-size: var(--title-font-Msize);
+    color: var(--title-sub-color);
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 768px){
+    .headerbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .header-menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header-utility {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .headerbar-togleBtn {
+        display: block;
+    }
+
+    .header-menu.active,
+    .header-utility.active {
+        display: flex;
+    }
+}
